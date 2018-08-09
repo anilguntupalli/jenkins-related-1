@@ -1,0 +1,39 @@
+this is document is meant for deploying artificat into tomact8 
+## this document is for copying artfact to tomcat8
+
+## this is based on toady tomact 8 documentaion
+
+to dopy artifcat for that we have install deploy artificat plugin
+
+go to tomact machine. in vi /opt.tomact/conf/tomactusers.xml add the below line.
+
+note: manager-gui,manager-script is mandatory roles but we are also giving admin gui role also.
+
+<user username="tomcat" password="password" roles="manager-gui,admin-gui,manager-script"/>
+
+## after that restat service
+
+sudo service tomacat restart
+
+Note: IN the above session we are cretaing tomact user only because of at in the time of insatlling tomact we create tomcat and only gave permission to tomcat.
+If you wish to change to any other user then we have to give permission on directory /opt/tomact
+
+passwd tomact ---> beacsue of user and password is required at jenkins authentication
+
+
+go to jenkins
+
+build section
+
+package 
+
+post build section --> to go to delpoy to conatianer__> select tomact 8
+
+give url htt://172.32.22.33:8080   --> best practive give priavte ip only
+
+giev tomact username and password
+
+copy section  **/*.war
+
+save and build then articifcat automatically into tomact8 machine.
+
