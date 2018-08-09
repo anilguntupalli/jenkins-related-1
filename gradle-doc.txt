@@ -1,0 +1,44 @@
+copy artifact plugin-- it will copy artifact one job to another job
+deploy artifact plugin -- it will copy application server . It may any app server
+
+
+ gradle buidl asks
+
+assemble -- assembles the ouptu tof the project
+build  --assemble s and test the project
+buildDependents --assemble and test this porject that dpend on it
+buildNeeded -asemble and tests this project and all project it depend on
+classes - assembles classed main
+clean - delete the build directory
+jar-- assembles a jar archive conataining the main classes
+testClassed -assemsbles classed test
+
+Build setup tasks
+init  --initalize a new gradle build task
+wrapper -- Generates  Gradle wrapper files(incubating)
+
+Documentation-tasks
+
+javadoc  - generate Javadoc doumnetation for the main source cod
+
+
+verifiaction task
+
+check -run all checks
+test -runs the unit tests
+
+ the below is the main doc
+
+gradle dependencies
+gradle build
+
+
+note: gradle is a groovy code. mavem is xml language.
+
+
+gradle run ---> to run application
+
+mvn package === gradle build
+
+
+
