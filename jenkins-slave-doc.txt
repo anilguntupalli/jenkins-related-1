@@ -1,0 +1,37 @@
+Now we are going to start jenkins slave setup .
+Requirements:
+1.Jenkins master
+2.slave machine : any Linux OS ec2 instance.
+
+Now i am going to create slave ec2 machine
+Now we are at slave machine.
+1. creating normal user and admin permissions. 
+2. Giving password based authentication enabling,(by default it is disabled).
+
+Note: before Jenkins 1.x versions a JLNP agent is automatically install and it will automatically install java and maven.But now it is not working, Like Jenkins master " now we have to manually installing java, maven and also set environment variables in slave machine,, also set environment variables.
+
+apt-get install openjdk-8-jdk -y    :--> to install java , it is open JDK 8 version is install otherwise to our qt blog install oracle java that is not a problem
+which java     ---> to know java install or not:" it will give /usr/bin/java
+readlink -f /usr/bin/java    -->/usr/lib/jvm/java-8-openjdk-amd64/   " we use this to set environment variable"
+cd /opt     From this we are going to install maven
+sudo wget http://redrockdigimark.com/apachemirror/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+tar xzf apache-maven-3.5.4-bin.tar.gz
+sudo ln -s /opt/apache-maven-3.5.4/bin/mvn /usr/bin/mvn
+
+Setting environment variables
+
+Note: we are doing all this in slave machine.
+		
+sudo vi /etc/profile
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+export PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+M2_HOME=/opt/apache-maven-3.5.4
+PATH=$PATH:$M2_HOME/bin
+export M2_HOME
+export PATH
+
+till now configurations in slave machine is over.
+Now we are going to jenkins master
+
+slave machine is ready.
+See video and understand how to run project on slave machine
