@@ -1,0 +1,22 @@
+jenkins pipelines are two types
+1.Declarative pipeline
+2.Scripted Pipeline 
+
+differnce betwwen declarative and scriptes pipleline
+Declarative Pipeline is a more recent feature of Jenkins Pipeline which:
+1.provides richer syntactical features over Scripted Pipeline syntax, and
+2.is designed to make writing and reading Pipeline code easier.
+
+
+benefits of writing jenkinfile: 
+
+Automatically creates a Pipeline build process for all branches and pull requests.
+Code review/iteration on the Pipeline (along with the remaining source code).
+Audit trail for the Pipeline.
+Single source of truth [3] for the Pipeline, which can be viewed and edited by multiple members of the project.
+
+
+pipeline syntax;
+A Pipeline’s code defines your entire build process, which typically includes stages for building an application, testing it and then delivering it.
+
+
